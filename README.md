@@ -231,9 +231,9 @@ skewT_results$MCMCtree</code></pre>
 ```
 ```{=html}
 <pre class="r"><code>## not run skewT_results &lt;- estimateSkewT(minAge=minimumTimes,
-## maxAge=maximumTimes, monoGroups=monophyleticGroups,
-## phy=apeTree, plot=FALSE, pdfOutput=&#39;skewTPlot.pdf&#39;,
-## writeMCMCtree=TRUE, MCMCtreeName=&#39;skewTInput.tre&#39;)</code></pre>
+   maxAge=maximumTimes, monoGroups=monophyleticGroups,
+   phy=apeTree, plot=FALSE, pdfOutput=&#39;skewTPlot.pdf&#39;,
+   writeMCMCtree=TRUE, MCMCtreeName=&#39;skewTInput.tre&#39;)</code></pre>
 ```
 <p>It is not necessary to specify the same shape value for each parameter: a different value of the shape parameter can be set for each distribution.</p>
 
@@ -640,10 +640,11 @@ uniform_results_nodeThree$apePhy</code></pre>
 
 ```{=html}
 <pre class="r"><code>## not run skewT_results_nodeFour &lt;-
-## estimateSkewT(minAge=minimumTimes[4],
-## maxAge=maximumTimes[4], monoGroups=monophyleticGroups[[4]],
-## scale=0.5, phy=cauchy_results_nodeTwo$apePhy, plot=FALSE,
-## writeMCMCtree = TRUE) skewT_results_nodeFour$apePhy</code></pre>
+  estimateSkewT(minAge=minimumTimes[4],
+  maxAge=maximumTimes[4], monoGroups=monophyleticGroups[[4]],
+  scale=0.5, phy=cauchy_results_nodeTwo$apePhy, plot=FALSE,
+  writeMCMCtree = TRUE) 
+skewT_results_nodeFour$apePhy</code></pre>
 ```
 :::
 
