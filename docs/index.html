@@ -60,17 +60,21 @@
 </nav><div class="container template-home">
 <div class="row">
   <main id="main" class="col-md-9"><h4 class="author">
-<em>Mark Puttick</em>
 </h4>
+<p><em>Mark Puttick</em></p>
+
 <h4 class="author">
-<em><a href="mailto:marknputtick@gmail.com" class="email">marknputtick@gmail.com</a></em>
 </h4>
+<p><em><a href="mailto:marknputtick@gmail.com" class="email">marknputtick@gmail.com</a></em></p>
+
 <h4 class="author">
-<em>University of Bath</em>
 </h4>
+<p><em>University of Bath</em></p>
+
 <h4 class="date">
-<em>20 May 2019</em>
 </h4>
+<p><em>20 May 2019</em></p>
+
 
 <p>
 This is a guide for the R program <a href="https://github.com/PuttickMacroevolution" class="external-link">MCMCtreeR</a>.
@@ -137,9 +141,11 @@ For this example there are four calibrated nodes. The MCMCtree function <code>ti
 <pre class="r"><code><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">apeTree</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/pkg/ape/man/nodelabels.html" class="external-link">nodelabels</a></span><span class="op">(</span><span class="op">)</span></span></code></pre>
 <div class="figure" style="text-align: center">
-<img src="https://github.com/WWz33/MCMCtreeR/raw/master/vignettes/MCMCtree/unnamed-chunk-3-1.png" alt="**Figure 1** Plot of the tree with node labelled with numbers" width="800"><p class="caption">
-<strong>Figure 1</strong> Plot of the tree with node labelled with numbers
+<p><img src="https://github.com/WWz33/MCMCtreeR/raw/master/vignettes/MCMCtree/unnamed-chunk-3-1.png" alt="**Figure 1** Plot of the tree with node labelled with numbers" width="800"></p>
+<p class="caption">
 </p>
+<p><strong>Figure 1</strong> Plot of the tree with node labelled with numbers</p>
+
 </div>
 <pre class="r"><code><span><span class="fu"><a href="reference/tipDes.html">tipDes</a></span><span class="op">(</span><span class="va">apeTree</span>, <span class="fl">10</span><span class="op">)</span></span></code></pre>
 <pre><code><span><span class="co">## [1] "gorilla"    "human"      "chimpanzee" "bonobo"</span></span></code></pre>
@@ -184,24 +190,12 @@ Skew <em>t</em>
 <a class="anchor" aria-label="anchor" href="#skew-t"></a>
 </h2>
 <div class="section level3">
-<h3 id="estimate-scale-with-a-given-shape">
-estimate scale with a given shape
-<a class="anchor" aria-label="anchor" href="#estimate-scale-with-a-given-shape"></a>
+<h3 id="estimate-scale-with-a-given-shape">estimate scale with a given shape<a class="anchor" aria-label="anchor" href="#estimate-scale-with-a-given-shape"></a>
 </h3>
-<p>
-The default arguments in the <code>estimateSkewT</code> assumes the user wants to estimate the scale of the distribution with a given shape value (the default shape value is 50). The function estimates the parameters with the user-supplied minimum and maximum ages for all nodes, and the monophyletic groups that define the nodes.The output <code>skewT_results<span class="math inline">$MCMCtree&lt;/code&gt; shows the estimated parameters in the input ready for MCMCtree. Here the parameters for the Skew T distributions are the location (lower node age), scale, shape, and degrees of freedom&lt;/p&gt;
-&lt;pre class="r"&gt;&lt;code&gt;skewT_results &amp;lt;- estimateSkewT(minAge = minimumTimes, maxAge = maximumTimes,
-    monoGroups = monophyleticGroups, phy = apeTree, plot = FALSE)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;warning - minProb parameter value recycled&amp;quot;
-## [1] &amp;quot;warning - maxProb parameter value recycled&amp;quot;
-## [1] &amp;quot;warning - estimateScale argument recycled&amp;quot;
-## [1] &amp;quot;warning - estimateShape argument recycled&amp;quot;
-## [1] &amp;quot;warning - estimateMode argument recycled&amp;quot;
-## [1] &amp;quot;warning - shape parameter value recycled&amp;quot;
-## [1] &amp;quot;warning - addMode parameter value recycled&amp;quot;&lt;/code&gt;&lt;/pre&gt;
-&lt;pre class="r"&gt;&lt;code&gt;skewT_results$</span>MCMCtree</code>
-
-</p>
+<p>The default arguments in the <code>estimateSkewT</code> assumes the user wants to estimate the scale of the distribution with a given shape value (the default shape value is 50). The function estimates the parameters with the user-supplied minimum and maximum ages for all nodes, and the monophyletic groups that define the nodes.The output <code>skewT_results$MCMCtree</code> shows the estimated parameters in the input ready for MCMCtree. Here the parameters for the Skew <em>t</em> distributions are the location (lower node age), scale, shape, and degrees of freedom.</p>
+<pre class="r"><code><span><span class="va">skewT_results</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/estimateSkewT.html">estimateSkewT</a></span><span class="op">(</span>minAge <span class="op">=</span> <span class="va">minimumTimes</span>, maxAge <span class="op">=</span> <span class="va">maximumTimes</span>,</span>
+<span>    monoGroups <span class="op">=</span> <span class="va">monophyleticGroups</span>,phy <span class="op">=</span> <span class="va">apeTree</span>, plot <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
+<span><span class="va">skewT_results</span><span class="op">$</span><span class="va">parameters</span></span></code></pre>
 <pre><code><span><span class="co">##</span></span>
 <span><span class="co">## 1 7 1</span></span>
 <span><span class="co">##</span></span>
@@ -218,9 +212,11 @@ The function <code>plotMCMCtree</code> plots the estimated age distributions giv
 <span><span class="kw">for</span> <span class="op">(</span><span class="va">i</span> <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fl">4</span><span class="op">)</span> <span class="fu"><a href="reference/plotMCMCTree.html">plotMCMCtree</a></span><span class="op">(</span><span class="va">skewT_results</span><span class="op">$</span><span class="va">parameters</span><span class="op">[</span><span class="va">i</span>, <span class="op">]</span>, method <span class="op">=</span> <span class="st">"skewT"</span>,</span>
 <span>    title <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span><span class="st">"node "</span>, <span class="va">i</span><span class="op">)</span>, upperTime <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html" class="external-link">max</a></span><span class="op">(</span><span class="va">maximumTimes</span><span class="op">)</span><span class="op">)</span></span></code></pre>
 <div class="figure" style="text-align: center">
-<img src="https://github.com/WWz33/MCMCtreeR/raw/master/vignettes/MCMCtree/unnamed-chunk-6-1.png" alt="**Figure 2** Skew *t* distributions for all nodes" width="1200"><p class="caption">
-<strong>Figure 2</strong> Skew <em>t</em> distributions for all nodes
+<p><img src="https://github.com/WWz33/MCMCtreeR/raw/master/vignettes/MCMCtree/unnamed-chunk-6-1.png" alt="**Figure 2** Skew *t* distributions for all nodes" width="1200"></p>
+<p class="caption">
 </p>
+<p><strong>Figure 2</strong> Skew <em>t</em> distributions for all nodes</p>
+
 </div>
 <pre class="r"><code><span><span class="va">skewT_results</span><span class="op">$</span><span class="va">MCMCtree</span></span></code></pre>
 <pre><code><span><span class="co">##</span></span>
@@ -301,9 +297,11 @@ These skew normal distributions can also be plotted to the screen.
 <span><span class="kw">for</span> <span class="op">(</span><span class="va">i</span> <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fl">4</span><span class="op">)</span> <span class="fu"><a href="reference/plotMCMCTree.html">plotMCMCtree</a></span><span class="op">(</span><span class="va">skewNormal_results</span><span class="op">$</span><span class="va">parameters</span><span class="op">[</span><span class="va">i</span>,</span>
 <span>    <span class="op">]</span>, method <span class="op">=</span> <span class="st">"skewNormal"</span>, title <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span><span class="st">"node "</span>, <span class="va">i</span><span class="op">)</span>, upperTime <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html" class="external-link">max</a></span><span class="op">(</span><span class="va">maximumTimes</span><span class="op">)</span><span class="op">)</span></span></code></pre>
 <div class="figure" style="text-align: center">
-<img src="https://github.com/WWz33/MCMCtreeR/raw/master/vignettes/MCMCtree/unnamed-chunk-11-1.png" alt="**Figure 3** Skew normal distributions for all nodes" width="1200"><p class="caption">
-<strong>Figure 3</strong> Skew normal distributions for all nodes
+<p><img src="https://github.com/WWz33/MCMCtreeR/raw/master/vignettes/MCMCtree/unnamed-chunk-11-1.png" alt="**Figure 3** Skew normal distributions for all nodes" width="1200"></p>
+<p class="caption">
 </p>
+<p><strong>Figure 3</strong> Skew normal distributions for all nodes</p>
+
 </div>
 </div>
 <div class="section level2">
@@ -320,9 +318,11 @@ Here the <code>estimateCauchy</code> function is used to estimate parameters and
 <span><span class="fu"><a href="reference/plotMCMCTree.html">plotMCMCtree</a></span><span class="op">(</span><span class="va">example_page_50</span>, method <span class="op">=</span> <span class="st">"cauchy"</span>, title <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span><span class="st">"node "</span>,</span>
 <span>    <span class="va">i</span><span class="op">)</span>, upperTime <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html" class="external-link">max</a></span><span class="op">(</span><span class="va">maximumTimes</span><span class="op">)</span><span class="op">)</span></span></code></pre>
 <div class="figure" style="text-align: center">
-<img src="https://github.com/WWz33/MCMCtreeR/raw/master/vignettes/MCMCtree/unnamed-chunk-12-1.png" alt="**Figure 4** Cauchy distributions for all nodes  (with a given scale)" width="1200"><p class="caption">
-<strong>Figure 4</strong> Cauchy distributions for all nodes (with a given scale)
+<p><img src="https://github.com/WWz33/MCMCtreeR/raw/master/vignettes/MCMCtree/unnamed-chunk-12-1.png" alt="**Figure 4** Cauchy distributions for all nodes  (with a given scale)" width="1200"></p>
+<p class="caption">
 </p>
+<p><strong>Figure 4</strong> Cauchy distributions for all nodes (with a given scale)</p>
+
 </div>
 <div class="section level3">
 <h3 id="estimate-scale-with-a-given-shape-1">
@@ -350,9 +350,11 @@ The <code>estimateCauchy</code> function will take minimum input times, and esti
 <span><span class="kw">for</span> <span class="op">(</span><span class="va">i</span> <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fl">4</span><span class="op">)</span> <span class="fu"><a href="reference/plotMCMCTree.html">plotMCMCtree</a></span><span class="op">(</span><span class="va">cauchy_results</span><span class="op">$</span><span class="va">parameters</span><span class="op">[</span><span class="va">i</span>, <span class="op">]</span>, method <span class="op">=</span> <span class="st">"cauchy"</span>,</span>
 <span>    title <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span><span class="st">"node "</span>, <span class="va">i</span><span class="op">)</span>, upperTime <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html" class="external-link">max</a></span><span class="op">(</span><span class="va">maximumTimes</span><span class="op">)</span><span class="op">)</span></span></code></pre>
 <div class="figure" style="text-align: center">
-<img src="https://github.com/WWz33/MCMCtreeR/raw/master/vignettes/MCMCtree/unnamed-chunk-13-1.png" alt="**Figure 5** Cauchy distributions for all nodes (with a given shape)" width="1200"><p class="caption">
-<strong>Figure 5</strong> Cauchy distributions for all nodes (with a given shape)
+<p><img src="https://github.com/WWz33/MCMCtreeR/raw/master/vignettes/MCMCtree/unnamed-chunk-13-1.png" alt="**Figure 5** Cauchy distributions for all nodes (with a given shape)" width="1200"></p>
+<p class="caption">
 </p>
+<p><strong>Figure 5</strong> Cauchy distributions for all nodes (with a given shape)</p>
+
 </div>
 <p>
 These plots indicate we may have constrained our distribution too much for the 2nd, 3rd, and 4th distribution so we can modify that to allow for a smaller offset.
@@ -374,9 +376,11 @@ These plots indicate we may have constrained our distribution too much for the 2
 <span><span class="kw">for</span> <span class="op">(</span><span class="va">i</span> <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fl">4</span><span class="op">)</span> <span class="fu"><a href="reference/plotMCMCTree.html">plotMCMCtree</a></span><span class="op">(</span><span class="va">cauchy_results</span><span class="op">$</span><span class="va">parameters</span><span class="op">[</span><span class="va">i</span>, <span class="op">]</span>, method <span class="op">=</span> <span class="st">"cauchy"</span>,</span>
 <span>    title <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span><span class="st">"node "</span>, <span class="va">i</span><span class="op">)</span>, upperTime <span class="op">=</span> <span class="va">maximumTimes</span><span class="op">[</span><span class="va">i</span><span class="op">]</span><span class="op">)</span></span></code></pre>
 <div class="figure" style="text-align: center">
-<img src="https://github.com/WWz33/MCMCtreeR/raw/master/vignettes/MCMCtree/unnamed-chunk-14-1.png" alt="**Figure 6** Cauchy distributions for all nodes (with a given shape) and smaller offset" width="1200"><p class="caption">
-<strong>Figure 6</strong> Cauchy distributions for all nodes (with a given shape) and smaller offset
+<p><img src="https://github.com/WWz33/MCMCtreeR/raw/master/vignettes/MCMCtree/unnamed-chunk-14-1.png" alt="**Figure 6** Cauchy distributions for all nodes (with a given shape) and smaller offset" width="1200"></p>
+<p class="caption">
 </p>
+<p><strong>Figure 6</strong> Cauchy distributions for all nodes (with a given shape) and smaller offset</p>
+
 </div>
 </div>
 </div>
@@ -400,9 +404,11 @@ Uniform distribution
 <span>    method <span class="op">=</span> <span class="st">"bound"</span>, title <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span><span class="st">"node "</span>, <span class="va">i</span><span class="op">)</span>, upperTime <span class="op">=</span> <span class="va">maximumTimes</span><span class="op">[</span><span class="va">i</span><span class="op">]</span> <span class="op">+</span></span>
 <span>        <span class="fl">1</span><span class="op">)</span></span></code></pre>
 <div class="figure" style="text-align: center">
-<img src="https://github.com/WWz33/MCMCtreeR/raw/master/vignettes/MCMCtree/unnamed-chunk-15-1.png" alt="**Figure 7** Uniform distributions for all nodes" width="1200"><p class="caption">
-<strong>Figure 7</strong> Uniform distributions for all nodes
+<p><img src="https://github.com/WWz33/MCMCtreeR/raw/master/vignettes/MCMCtree/unnamed-chunk-15-1.png" alt="**Figure 7** Uniform distributions for all nodes" width="1200"></p>
+<p class="caption">
 </p>
+<p><strong>Figure 7</strong> Uniform distributions for all nodes</p>
+
 </div>
 </div>
 <div class="section level2">
@@ -428,9 +434,11 @@ Gamma distribution
 <span><span class="kw">for</span> <span class="op">(</span><span class="va">i</span> <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fl">4</span><span class="op">)</span> <span class="fu"><a href="reference/plotMCMCTree.html">plotMCMCtree</a></span><span class="op">(</span><span class="va">gamma_results</span><span class="op">$</span><span class="va">parameters</span><span class="op">[</span><span class="va">i</span>, <span class="op">]</span>, method <span class="op">=</span> <span class="st">"gamma"</span>,</span>
 <span>    title <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span><span class="st">"node "</span>, <span class="va">i</span><span class="op">)</span>, upperTime <span class="op">=</span> <span class="va">maximumTimes</span><span class="op">[</span><span class="va">i</span><span class="op">]</span><span class="op">)</span></span></code></pre>
 <div class="figure" style="text-align: center">
-<img src="https://github.com/WWz33/MCMCtreeR/raw/master/vignettes/MCMCtree/unnamed-chunk-16-1.png" alt="**Figure 8** Gamma distributions for all nodes" width="1200"><p class="caption">
-<strong>Figure 8</strong> Gamma distributions for all nodes
+<p><img src="https://github.com/WWz33/MCMCtreeR/raw/master/vignettes/MCMCtree/unnamed-chunk-16-1.png" alt="**Figure 8** Gamma distributions for all nodes" width="1200"></p>
+<p class="caption">
 </p>
+<p><strong>Figure 8</strong> Gamma distributions for all nodes</p>
+
 </div>
 </div>
 <div class="section level2">
